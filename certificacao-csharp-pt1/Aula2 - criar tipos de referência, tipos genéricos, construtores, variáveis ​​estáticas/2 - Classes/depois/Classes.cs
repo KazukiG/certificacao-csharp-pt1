@@ -13,7 +13,7 @@ namespace certificacao_csharp_roteiro
             ClassePosicaoGPS posicao1 = new ClassePosicaoGPS()
             { Latitude = 13.78, Longitude = 29.51 };
 
-            posicao1 = new ClassePosicaoGPS(13.78, 29.51);
+            //posicao1 = new ClassePosicaoGPS(13.78, 29.51);
 
             Console.WriteLine(posicao1);
 

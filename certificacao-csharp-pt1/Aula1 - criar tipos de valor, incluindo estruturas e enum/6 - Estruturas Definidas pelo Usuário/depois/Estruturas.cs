@@ -10,26 +10,18 @@ namespace certificacao_csharp_roteiro
     {
         public void Executar()
         {
-            double Latitude1 = 13.78;
-            double Longitude1 = 29.51;
-            double Latitude2 = 40.23;
-            double Longitude2 = 17.4;
-            Console.WriteLine($"Latitude1 = {Latitude1}");
-            Console.WriteLine($"Longitude1 = {Longitude1}");
-            Console.WriteLine($"Latitude2 = {Latitude2}");
-            Console.WriteLine($"Longitude2 = {Longitude2}");
-
             PosicaoGPS posicao1;
-            posicao1.Latitude = 13.78;
-            posicao1.Longitude = 29.51;
+            PosicaoGPS posicao2;
 
             posicao1 = new PosicaoGPS(13.78, 29.51);
+            posicao2 = new PosicaoGPS(-20.90, 30.51);
 
             Console.WriteLine(posicao1);
+            Console.WriteLine(posicao2);
         }
     }
 
-    interface IGPS
+    interface IGPS //porque a interface leva o metodo?
     {
         bool EstaNoHemisferioNorte();
     }
@@ -38,11 +30,6 @@ namespace certificacao_csharp_roteiro
     {
         public double Latitude;
         public double Longitude;
-
-        //public PosicaoGPS()
-        //{
-
-        //}
 
         public PosicaoGPS(double latitude, double longitude)
         {
@@ -57,7 +44,7 @@ namespace certificacao_csharp_roteiro
 
         public override string ToString()
         {
-            return $"Latitude: {Latitude}, Longitude: {Longitude}";
+            return $"Latitude: {Latitude}, Longitude: {Longitude}, Hemisfério Norte: {EstaNoHemisferioNorte()}";
         }
     }
 }
